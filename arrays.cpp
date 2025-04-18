@@ -84,13 +84,32 @@ int findDuplicate(int arr[], int size) {
     }
     return ans;
 }
-
+vector<int>  findIntersection(int arr1[],int arr2[], int n, int m){
+    vector<int> ans;
+    int i = 0;
+    int j = 0;
+    while (i<n && j<m){
+        if (arr1[i] == arr2[j])
+        {
+            ans.push_back(arr1[i]);
+            i++,j++;
+        }
+        else if (arr1[i] < arr2[j]) {
+            i++;
+        }
+        else{
+            j++;
+        }
+        
+    }
+    return ans;
+}
 
 int main(){
 
     // int array[11] = {1,2,5,-4,5,-4,0,8,0,1,2};
 
-    int arr[5] = {1,2,3,4,4};
+    // int arr[5] = {1,2,3,4,4};
     // int sum = sumOfArray(array, 5);
     // cout << "The sum of the array is: " << sum << endl;
 
@@ -111,12 +130,23 @@ int main(){
     
     // int ans = findUnique(array, 11);
     
-    int ans = findDuplicate(arr,5);
-    printArray(arr, 5);
+    // int ans = findDuplicate(arr,5);
+    // printArray(arr, 5);
 
-    cout << "duplicate number is: "<<ans;
+    // cout << "duplicate number is: "<<ans;
 
     // cout<<"unique value is : "<<ans;
+
+    int arr1[7] = {1,2,2,3,4,4,4};
+    int arr2[4] = {2,3,4,4};
+
+    vector<int> answer = findIntersection(arr1,arr2,7,4);
+
+    for (int i : answer)    
+    {
+        cout<< i << " ";
+    }
+    
     cout << endl;
     return 0;
 }
