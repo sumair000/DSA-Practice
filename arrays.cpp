@@ -105,6 +105,28 @@ vector<int>  findIntersection(int arr1[],int arr2[], int n, int m){
     return ans;
 }
 
+vector<int> tripletSum(int arr[],int size ,int value){
+    vector<int> ans;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i + 1; j < size ; j++)
+        {
+            for (int k = j+1; k < size; k++)
+            {
+                if(arr[i]+arr[j]+arr[k] == value){
+                ans.push_back(arr[i]);
+                ans.push_back(arr[j]);
+                ans.push_back(arr[k]); 
+                }
+            }
+            
+        }
+        
+    }
+    return ans;
+    
+}
+
 int main(){
 
     // int array[11] = {1,2,5,-4,5,-4,0,8,0,1,2};
@@ -137,11 +159,15 @@ int main(){
 
     // cout<<"unique value is : "<<ans;
 
-    int arr1[7] = {1,2,2,3,4,4,4};
-    int arr2[4] = {2,3,4,4};
+    // int arr1[7] = {1,2,2,3,4,4,4};
+    // int arr2[4] = {2,3,4,4};
 
-    vector<int> answer = findIntersection(arr1,arr2,7,4);
+    // vector<int> answer = findIntersection(arr1,arr2,7,4);
 
+
+    int arr[6] = {1,3,3,5,4,2};
+    int value = 11;
+    vector<int> answer = tripletSum(arr,6,11);
     for (int i : answer)    
     {
         cout<< i << " ";
