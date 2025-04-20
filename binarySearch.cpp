@@ -165,6 +165,8 @@ int findSortedRotated(int arr[],int size, int target){
     return -1;
 }
 
+
+
 int main(){
 
     int arr[14] = {1,3,4,4,4,4,4,4,4,4,5,7,8,11};
